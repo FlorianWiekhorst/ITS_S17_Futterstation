@@ -1,22 +1,64 @@
-
+body{
+  font-family: 'Roboto', sans-serif;
+}
+ion-content,
+content,
+content-md{
+  background-color: whitesmoke !important;
+}
 .title{
     text-align: center;
 }
 .main-button{
-    padding: 40px;
-    border-radius: 75px;
+    // padding: 0px 40px;
+    border-radius: 25px;
     font-size: 20px;
-    // width: 100px;
-    // height: 100px;
+    width: 100%;
+    height: 20vh;
 }
 .food-button{
-    border: 1px solid #ff4545;
-    color: #ff4545;
+  border: 1px solid #ff4545;
+  color: white;
+  background-color: #ff4545;
+}
+.water-button{
+  border: 1px solid #0092CA;
+  color: white;
+  background-color: #0092CA;
 }
 ion-col div{
     margin: auto;
     text-align: center;
 }
+.food-amount,
+.water-amount{
+  display: none;
+  transition: display 0.3s;
+  button{
+    border-radius: 75px;
+    width: 30%;
+    height: 10vh;
+    margin: 0px 40px;
+  }
+}
+.amount-header{
+  font-size: 22px;
+  margin: 10px 0px;
+}
 .bigger{
     font-size: 40px;
+}
+.video-frame{
+  height: 40vh;
+  border: 1px solid black;
+  background: url(../img/derhund.jpg);
+  background-size: cover;
+}
+.button-active{
+  display: block;
+  transition: display 0.3s;
+}
+@keyframes button-slide {
+  0% {left: -200px;opacity:0;}
+  100% {left: 100px;opacity: 1; display:block;}
 }

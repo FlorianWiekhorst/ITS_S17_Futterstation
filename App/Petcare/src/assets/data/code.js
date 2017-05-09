@@ -1,0 +1,10 @@
+$(document).ready(function(){
+  $("#food-button").click(function(){
+      $(".food-amount").toggleClass("button-active");
+      $(".water-amount").removeClass("button-active");
+  });
+  $("#water-button").click(function(){
+      $(".water-amount").toggleClass("button-active");
+      $(".food-amount").removeClass("button-active");
+  });
+});

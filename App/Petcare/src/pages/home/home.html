@@ -12,21 +12,43 @@
     If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
   </p>-->
   <ion-grid>
+    <ion-row>
+      <ion-col col-sm-12 col-md-12>
+        <section class="video-frame"></section>
+      </ion-col>
+    </ion-row>
+
     <ion-row justify-content-center>
-     
       <ion-col col-sm-2 col-md-2 col-xl-1>
         <div>
-          <button class="main-button food-button" ion-button outline><ion-icon name="restaurant"></ion-icon></button>
-          <button class="main-button food-button" ion-button outline><ion-icon class="bigger" name="restaurant"></ion-icon></button>
+          <!-- <button class="main-button food-button" ion-button outline><ion-icon name="restaurant"></ion-icon></button> -->
+          <button id="food-button" class="main-button food-button" color="danger" ion-button><ion-icon class="bigger" name="restaurant"></ion-icon></button>
         </div>
       </ion-col>
       <ion-col col-sm-2 col-md-2 col-xl-1>
         <div>
-          <button class="main-button water-button" ion-button outline><ion-icon name="water"></ion-icon></button>
-          <button class="main-button water-button" ion-button outline><ion-icon class="bigger" name="water"></ion-icon></button>
+          <!-- <button class="main-button water-button" ion-button outline><ion-icon name="water"></ion-icon></button> -->
+          <button id="water-button" class="main-button water-button" ion-button><ion-icon class="bigger" name="water"></ion-icon></button>
         </div>
       </ion-col>
-     
+    </ion-row>
+    <ion-row>
+
+      <ion-col col-md-12 class="food-amount">
+        <div class="amount-header">How much food?</div>
+        <div>
+          <button class="" color="danger" ion-button round><ion-icon name="restaurant"></ion-icon></button>
+          <button class="" color="danger" ion-button round><ion-icon class="bigger" name="restaurant"></ion-icon></button>
+        </div>
+      </ion-col>
+      <ion-col col-md-12 class="water-amount">
+        <div class="amount-header">How much water?</div>
+        <div>
+          <button class="" ion-button round><ion-icon name="water"></ion-icon></button>
+          <button class="" ion-button round><ion-icon class="bigger" name="water"></ion-icon></button>
+        </div>
+      </ion-col>
+
     </ion-row>
   </ion-grid>
 </ion-content>
