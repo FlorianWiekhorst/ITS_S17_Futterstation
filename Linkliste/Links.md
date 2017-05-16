@@ -7,3 +7,4 @@ http://www.ebay.de/itm/DC-12V-Elektrisches-Magnetventil-Valve-Ventil-fur-Warmwas
 
 http://www.farnell.com/datasheets/1878412.pdf?_ga=2.183778278.1719900600.1494936865-1146614160.1493728172
 
+https://www.amazon.de/gp/product/B00NSEPJBK/ref=ox_sc_act_image_1?smid=A1YTR8UCVRSI8N&psc=1
