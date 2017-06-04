@@ -9,7 +9,7 @@ $(document).ready(function(){
     $(".water-amount").removeClass("button-active");
     foodClick++;
     if(foodClick%2==1 || waterClick%2==1){
-      $(".scroll-content").animate({ scrollTop: $(document).height() }, "slow");
+      $(".scroll-content").animate({ scrollTop: $(document).height() }, 1000);
     }
   });
   $("#water-button").click(function(){
