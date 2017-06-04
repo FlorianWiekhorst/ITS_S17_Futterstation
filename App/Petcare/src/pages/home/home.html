@@ -6,7 +6,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
   <!--The world is your oyster.
   <p>
     If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
@@ -34,18 +34,18 @@
     </ion-row>
     <ion-row>
 
-      <ion-col col-md-12 class="food-amount">
+      <ion-col col-md-6 class="food-amount">
         <div class="amount-header">How much food?</div>
         <div>
-          <button class="" color="danger" ion-button round><ion-icon name="restaurant"></ion-icon></button>
-          <button class="" color="danger" ion-button round><ion-icon class="bigger" name="restaurant"></ion-icon></button>
+          <button class="smallFood-btn" id="smallFood-btn" color="danger" ion-button><ion-icon name="restaurant"></ion-icon></button>
+          <button class="bigFood-btn" id="bigFood-btn" color="danger" ion-button><ion-icon class="bigger" name="restaurant"></ion-icon></button>
         </div>
       </ion-col>
-      <ion-col col-md-12 class="water-amount">
+      <ion-col col-md-6 class="water-amount">
         <div class="amount-header">How much water?</div>
         <div>
-          <button class="" ion-button round><ion-icon name="water"></ion-icon></button>
-          <button class="" ion-button round><ion-icon class="bigger" name="water"></ion-icon></button>
+          <button class="smallWater-btn" id="smallWater-btn" ion-button><ion-icon name="water"></ion-icon></button>
+          <button class="bigWater-btn" id="bigWater-btn" ion-button><ion-icon class="bigger" name="water"></ion-icon></button>
         </div>
       </ion-col>
 
