@@ -57,8 +57,9 @@ ion-col div{
 .video-frame{
   height: 65vh;
   border: 1px solid black;
-  background: url(../img/derhund.jpg);
-  background-size: cover;
+  width: 100%;
+  // background: url(../img/derhund.jpg);
+  // background-size: cover;
 }
 .button-active{
   display: block;
