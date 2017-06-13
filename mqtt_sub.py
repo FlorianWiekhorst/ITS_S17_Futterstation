@@ -26,39 +26,36 @@ def on_message(client,userdata,msg):
 
 	payload = msg.payload.decode('utf-8')
 
-	if payload == '0':
+	if payload == '00':
 		print("Schalte Licht aus")
-
-	elif payload == '1':
-		print("Holla is workin mahn")
-		GPIO.output(5, False)	
-		
-	elif payload == '2':
-		GPIO.output(5, True)
-		
-	elif payload == '4':
 		try:
-			while True:
-				p.ChangeDutyCycle(5)
-				time.sleep(0.1)
-				p.ChangeDutyCycle(7.5)
-				time.sleep(0.1)
-				p.ChangeDutyCycle(10)
-				time.sleep(0.1)
-				p.ChangeDutyCycle(12.5)
-				time.sleep(0.1)
-				p.ChangeDutyCycle(10)
-				time.sleep(0.1)
-				p.ChangeDutyCycle(7.5)
-				time.sleep(0.1)
-				p.ChangeDutyCycle(5)
-				time.sleep(0.1)
-				p.ChangeDutyCycle(2.5)
-				time.sleep(0.1)
+			p.ChangeDutyCycle(7.5)
+			time.sleep(0.7)
+			p.ChangeDutyCycle(2.5)
 		except KeyboardInterrupt:
 			p.stop()
 			GPIO.cleanup()
-		
+
+	elif payload == '01':
+		print("Holla is workin mahn")
+		try:
+			p.ChangeDutyCycle(7.5)
+			time.sleep(3)
+			p.ChangeDutyCycle(2.5)
+		except KeyboardInterrupt:
+			p.stop()
+			GPIO.cleanup()
+
+	elif payload == '10':
+		GPIO.output(5, True)
+		time.sleep(0.5)
+		GPIO.output(5,False)
+
+	elif payload == '11':
+		GPIO.output(5, True)
+		time.sleep(0.5)
+		GPIO.output(5,False)
+
 	else:
 		print("unbekannter Befehl")
 
@@ -75,4 +72,4 @@ client.on_message = on_message
 
 client.connect(url,1883,60)
 
-client.loop_forever()      
+client.loop_forever()
