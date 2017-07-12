@@ -7,8 +7,6 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="msapplication-tap-highlight" content="no">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
   <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#4e8ef7">
@@ -21,7 +19,7 @@
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('service-worker.js')
         .then(() => console.log('service worker installed'))
-        .catch(err => console.log('Error', err));
+        .catch(err => console.error('Error', err));
     }
   </script>-->
 
@@ -39,12 +37,5 @@
   <!-- The bundle js is generated during the build process -->
   <script src="build/main.js"></script>
 
-  <script src="assets/data/mqttws31-win.js"></script>
-
-  <script src="assets/data/code.js"></script>
-
-  <!-- <script src="assets/code.js"></script> -->
-
-  <!-- <script src="assets/data/security-cam.js"></script> -->
 </body>
 </html>

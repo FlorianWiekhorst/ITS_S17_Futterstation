@@ -54,14 +54,22 @@ $(document).ready(function(){
 });
 
 // Create a client instance
-client = new Paho.MQTT.Client("broker.mqttdashboard.com", Number(8000), "clientId-hyLO51dLlK");
-
+client = new Paho.MQTT.Client("diginet.mt.haw-hamburg.de", Number(80), "clientId-hyLO51dLlK");
+// client.username_pw_set('haw', password='schuh+-0');
 // set callback handlers
 client.onConnectionLost = onConnectionLost;
 client.onMessageArrived = onMessageArrived;
-
+var options = {
+  timeout: 3,
+  userName: "haw",
+  password: "schuh+-0",
+  onSuccess: onConnect,
+  onFailure: function (message) {
+    console.log("Connection failed: " + message.errorMessage);
+  }
+};
 // connect the client
-client.connect({onSuccess:onConnect});
+client.connect(options);
 
 
 // called when the client connects
@@ -69,9 +77,9 @@ function onConnect() {
   // Once a connection has been made, make a subscription and send a message.
   console.log("onConnect");
   client.subscribe("haw/dmi/mt/its/petcare");
-  message = new Paho.MQTT.Message("Hello");
-  message.destinationName = "haw/dmi/mt/its/petcare";
-  client.send(message);
+  // message = new Paho.MQTT.Message("Hello");
+  // message.destinationName = "haw/dmi/mt/its/petcare";
+  // client.send(message);
 }
 
 // called when the client loses its connection
@@ -84,4 +92,10 @@ function onConnectionLost(responseObject) {
 // called when a message arrives
 function onMessageArrived(message) {
   console.log("onMessageArrived:"+message.payloadString);
+  if(message.payloadString != "00" && message.payloadString != "01" && message.payloadString != "10" && message.payloadString != "11"){
+    let base64_encoded = message.payloadString;
+    let image = "data:image/png;base64,"+base64_encoded;
+
+    $("#security-cam").attr("src",image);
+  }
 }
