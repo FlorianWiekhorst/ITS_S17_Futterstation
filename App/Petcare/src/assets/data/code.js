@@ -54,15 +54,16 @@ $(document).ready(function(){
 });
 
 // Create a client instance
-client = new Paho.MQTT.Client("diginet.mt.haw-hamburg.de", Number(80), "clientId-hyLO51dLlK");
+// client = new Paho.MQTT.Client("diginet.mt.haw-hamburg.de", Number(80), "clientId-hyLO51dLlK");
+client = new Paho.MQTT.Client("broker.mqttdashboard.com", Number(8000), "clientId-hyLO51dLlK");
 // client.username_pw_set('haw', password='schuh+-0');
 // set callback handlers
 client.onConnectionLost = onConnectionLost;
 client.onMessageArrived = onMessageArrived;
 var options = {
   timeout: 3,
-  userName: "haw",
-  password: "schuh+-0",
+  // userName: "haw",
+  // password: "schuh+-0",
   onSuccess: onConnect,
   onFailure: function (message) {
     console.log("Connection failed: " + message.errorMessage);

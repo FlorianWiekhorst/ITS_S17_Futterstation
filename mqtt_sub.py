@@ -10,7 +10,8 @@ try:
 except ImportError:
     import _thread as thread #Py3K changed it.
 
-url = "diginet.mt.haw-hamburg.de"
+# url = "diginet.mt.haw-hamburg.de"
+url = "broker.mqttdashboard.com"
 
 topic = "haw/dmi/mt/its/petcare"
 
@@ -99,20 +100,25 @@ def on_message(client,userdata,msg):
 		print("unbekannter Befehl")
 
 
-# def sendPic():
-# 	command = "fswebcam image.jpeg"
-# 	os.system(command)
-# 	# subprocess.Popen(command,stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-# 	with open("image.jpeg", "rb") as image_file:
-# 		encoded_string = base64.b64encode(image_file.read())
-# 	client.publish(topic,encoded_string,qos=2,retain=False)
+def sendPic():
+	try:
+		while True:
+			command="fswebcam image.jpg --no-banner"
+			os.system(command)
+			#subprocess.Popen(command,stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+			with open("image.jpg", "rb") as image_file:
+				encoded_string = base64.b64encode(image_file.read())
+			client.publish(topic,encoded_string,qos=2,retain=False)
+			time.sleep(1)
+	except KeyboardInterrupt:
+		print("interrupted")
 
 
 
 
-# thread1 = myThread(1, "Image_Thread", 1)
-# thread1.daemon=True
-# thread1.start()
+thread1 = myThread(1, "Image_Thread", 1)
+thread1.daemon=True
+thread1.start()
 
 client = mqtt.Client()
 
@@ -121,7 +127,7 @@ client.on_connect = on_connect
 client.on_message = on_message
 
 client.on_publish = on_publish
-client.username_pw_set("haw",password="schuh+-0")
+# client.username_pw_set("haw",password="schuh+-0")
 client.connect(url,1883,60)
 
 client.loop_forever()
