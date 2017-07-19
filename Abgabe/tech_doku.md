@@ -86,4 +86,4 @@ function onMessageArrived(message) {
 <div style="page-break-after: always;"></div>
 
 ## Blockschaltbild
-![Blockschaltbild](Elektronischeverschaltung.jpg)
+![Blockschaltbild](Schaltbild.jpg)
