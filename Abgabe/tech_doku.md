@@ -87,3 +87,6 @@ function onMessageArrived(message) {
 
 ## Blockschaltbild
 ![Blockschaltbild](Schaltbild.jpg)
+
+## Darstellung des Innenlebens(Futterausgabe)
+![Innenleben](Futterausgabe_Drehscheibe_Complete.png)
